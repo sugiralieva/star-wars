@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import fetchItem from "../utils/utils";
+import { fetchItem } from "../utils/utils";
 
 const PeopleItem = () => {
     const params = useParams()
