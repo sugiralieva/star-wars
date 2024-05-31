@@ -5,13 +5,41 @@
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     background-color: #000;
 }
 
 header .logo img {
     height: 150px;
     justify-self: center;
+}
+
+body {
+    background-image: url('background.jpg');
+}
+
+.container {
+    width: 80%; /* 80% ширины */
+    height: 100%; /* Полная высота */
+    background-color: white; /* Светлый фон */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Небольшая тень для визуального эффекта */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Опционально, если хотите центрировать содержимое внутри контейнера */
+}
+
+#root {
+    flex: 1;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
 }
