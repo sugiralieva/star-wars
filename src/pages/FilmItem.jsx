@@ -1,27 +1,22 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import axios from "axios";
+import fetchItem from "../utils/utils";
 
 const FilmItem = () => {
     const params = useParams()
     const [film, setFilm] = useState([])
-
-    async function fetchFilm (filmId) {
-        const response = await axios.get(`https://swapi.dev/api/films/${filmId}`)
-        setFilm(response.data)
-    }
     
       useEffect(() => {
-        fetchFilm(params.id)
+        fetchItem('films', params.id, setFilm)
       }, [])
 
 
     return(
-        <div>
-            <h1 style={{color:"white"}}> {film.title}</h1>
+        <div className="content">
+            <h1 className="title"> {film.title}</h1>
             {Object.entries(film).map(([key, value]) => (
-          <p style={{color:"white"}} key={key}>
+          <p key={key}>
           <strong>{key.replace('_', ' ')}:</strong> {value}
         </p>
       ))}

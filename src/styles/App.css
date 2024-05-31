@@ -20,7 +20,7 @@
   }
   
   .navbar_items a:hover {
-    color: #fff;
+    color: #ffe919;
   }
 
   .page_items {
@@ -36,5 +36,20 @@
     cursor: pointer;
   }
   .page_items a:hover {
+    color: #ffe919;
+  }
+
+  .content {
+    width: 80%;
+    padding: 20px;
+    font-size: 18px;
+    text-align: justify;
+    word-wrap: break-word;
+    color: #fff;
+    margin-left: 150px;
+  }
+  .title {
+    margin-top: 20px;
+    text-align: center;
     color: #fff;
   }

@@ -6,13 +6,21 @@ import AppRouter from "./components/AppRouter";
 
 
 function App() {
+  const links = [
+    {name: 'FILMS', link: '/films'},
+    {name: 'PEOPLE', link: '/people'},
+    {name: 'PLANETS', link: '/planets'},
+    {name: 'SPECIES', link: '/species'},
+    {name: 'STARSHIPS', link: '/starships'},
+    {name: 'VEHICLES', link: '/vehicles'}
+  ]
 
 
   return (
       <BrowserRouter>
-        <Navbar/>
+        <Navbar links={links} />
         <hr/>
-        <AppRouter/>
+        <AppRouter links={links}/>
        </BrowserRouter>
 
   );

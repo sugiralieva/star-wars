@@ -21,14 +21,14 @@ body {
 }
 
 .container {
-    width: 80%; /* 80% ширины */
-    height: 100%; /* Полная высота */
-    background-color: white; /* Светлый фон */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Небольшая тень для визуального эффекта */
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Опционально, если хотите центрировать содержимое внутри контейнера */
+    flex-direction: column; 
 }
 
 #root {

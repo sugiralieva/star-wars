@@ -2,36 +2,27 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+import fetchItem from "../utils/utils";
 
 const VehiclesItem = () => {
     const params = useParams()
     const [vehicle, setVehicle] = useState({})
-
-    async function fetchVehicle (vehicleId) {
-      try{
-      const response = await axios.get(`https://swapi.dev/api/vehicles/${vehicleId}`)
-      setVehicle(response.data)
-    } catch {
-      setVehicle({information:'No information'})
-    }
-  }
   
     useEffect(() => {
-      fetchVehicle(params.id)
+      fetchItem('vehicles', params.id, setVehicle)
     }, [])
 
 
   return(
-      <div>
-          <h1 style={{color:"white"}}> {vehicle.name}</h1>
+    <div className="content">
+          <h1 className="title"> {vehicle.name}</h1>
           {Object.entries(vehicle).map(([key, value]) => (
-        <p style={{color:"white"}} key={key}>
+        <p key={key}>
         <strong>{key.replace('_', ' ')}:</strong> {value}
       </p>
     ))}
       </div>
   )
 }
-
 
 export default VehiclesItem;

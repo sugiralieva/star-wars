@@ -15,7 +15,7 @@ import SpeciesItem from "../pages/SpeciesItem";
 import StarshipsItem from "../pages/StarshipsItem";
 import VehiclesItem from "../pages/VehiclesItem";
 
-const AppRouter = () => {
+const AppRouter = ({links}) => {
 
     return(
         <Routes>

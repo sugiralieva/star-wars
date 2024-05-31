@@ -1,27 +1,22 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import axios from "axios";
+import fetchItem from "../utils/utils";
 
 const PlanetsItem = () => {
     const params = useParams()
     const [planet, setPlanet] = useState({})
-
-    async function fetchPlanet (planetId) {
-      const response = await axios.get(`https://swapi.dev/api/planets/${planetId}`)
-      setPlanet(response.data)
-  }
   
     useEffect(() => {
-      fetchPlanet(params.id)
+      fetchItem('planets', params.id, setPlanet)
     }, [])
 
 
   return(
-      <div>
-          <h1 style={{color:"white"}}> {planet.name}</h1>
+    <div className="content">
+          <h1 className="title"> {planet.name}</h1>
           {Object.entries(planet).map(([key, value]) => (
-        <p style={{color:"white"}} key={key}>
+        <p key={key}>
         <strong>{key.replace('_', ' ')}:</strong> {value}
       </p>
     ))}
